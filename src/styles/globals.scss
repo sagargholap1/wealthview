@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ // Scroll Bar Styling
+.scrollbar {
+    &::-webkit-scrollbar {
+      @apply w-[1rem] h-[1rem];
+    }
+  
+    &::-webkit-scrollbar-track {
+      @apply bg-[#E2E2E2];
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      @apply   bg-heroPrimary;
+    }
+  }
+
+  .hide-scrollbar {
+    &::-webkit-scrollbar {
+      @apply hidden;
+    }
+  }
+
+  // Global Styling
+@layer components {
+    *,
+    *::after,
+    *::before {
+      @apply m-0 p-0 box-border;
+    }
+  
+    html {
+      @apply scroll-smooth scrollbar;
+      // cursor: url(/mici.png), auto;
+    }
+  
+    body {
+      @apply  font-titillium text-body-1 font-[400] leading-snug text-black overflow-x-hidden select-none relative;
+    }
+  
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply font-[600] leading-[1];
+    }
+  
+    img {
+      @apply w-full h-auto;
+    }
+  
+    a,
+    button {
+      @apply cursor-pointer md:cursor-default;
+    }
+  
+    .wrapper {
+      @apply w-[90%] max-w-[192rem] mx-auto;
+    }
+  
+    .wrapper2 {
+      @apply w-[90%] max-w-[1440px] mx-auto;
+    }
+    .pointer {
+      @apply cursor-pointer 900:cursor-default;
+    }
+
+    .animated-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+    }
+
+    .animated-text span{
+        @apply relative
+    }
+
+    .animated-text span::before{
+        content: "Share Traders";
+        color: #ff7f50;
+        animation: words 20s infinite;
+    }
+
+    .animated-text span::after{
+        content: "";
+        position:absolute;
+        width: calc(100% + 8px);
+        height: 120%;
+        background-color: rgb(20 64 70);
+        border-left: 2px solid #ff7f50;
+        right: -8px;
+        animation: cursor .8s infinite, typing 20s steps(24) infinite ;
+    }
+
+    @keyframes cursor {
+        to{
+            border-left: 2px solid #144046;
+        }
+    }
+
+    @keyframes words {
+        0%,20%{
+            content: "Share Traders";
+        }
+        21%,40%{
+            content: "Salaried Taxpayers";
+        }
+        41%,60%{
+            content: "Future and Options Trader";
+             
+        }
+        61%,80%{
+            content: "Whatnext Traders";
+        }
+        81%,100%{
+            content: "Sagar Gholap ";
+        }
+    }
+
+    @keyframes typing {
+      10%,15%,30%,35%,50%,55%,70%,75%,90%,95% {
+        width: 0;
+      }
+      5%,20%,25%,40%,45%,60%,65%,80%,85%  {
+        width: calc(100% + 8px);
+    }
+}
+  }
